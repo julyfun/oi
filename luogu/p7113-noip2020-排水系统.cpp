@@ -1,9 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef unsigned long long ll;
+typedef __int128 ll;
 const int N = 1e5 + 10;
 ll gcd(ll a, ll b) {
     return b == 0 ? a : gcd(b, a % b);
+}
+string ll_to_str(ll x) {
+    if (x == 0) return "0";
+    string r = "";
+    while (x) {
+        r += x % 10 + '0';
+        x /= 10;
+    }
+    reverse(r.begin(), r.end());
+    return r;
 }
 struct Num {
     ll p, q; // p / q
@@ -50,6 +60,7 @@ int main() {
     }
     for (int i = 1; i <= n; i++)
         if (e[i].size() == 0)
-            cout << f[i].p << " " << f[i].q << "\n";
+            cout << ll_to_str(f[i].p) << " " << ll_to_str(f[i].q) << "\n";
     return 0;
 }
+
