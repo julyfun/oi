@@ -12,4 +12,4 @@ ignore*
 "
 *.zip
 *.pdf
-
+.obsidian
